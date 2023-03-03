@@ -32,8 +32,8 @@ const Signup = () => {
   };
   return (
     <div className="signup-container">
-      <h2>S'inscrire</h2>
       <form onSubmit={handleSubmit} className="signup-form">
+        <h2>S'inscrire</h2>
         <input
           value={username}
           onChange={(event) => {
@@ -61,8 +61,8 @@ const Signup = () => {
           type="password"
         />
         <button type="submit">S'inscrire</button>
+        <Link to="/login">Tu as déjà un compte ? Connecte-toi !</Link>
       </form>
-      <Link to="/login">Tu as déjà un compte ? Connecte-toi !</Link>
     </div>
   );
 };

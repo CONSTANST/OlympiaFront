@@ -9,3 +9,20 @@
 // gettime natif js millisecond
 // getTime()
 // https://github.com/CONSTANST/OlympiaBack.git
+
+// pages a crée
+//* "/events"
+//* "/events/create"
+// "/events/:id"
+// "/events/availabilities"
+// "/event/modify/:eventId"
+// "/events/delete/:eventId"
+//
+//* "/tickets/book"
+// "/tickets"
+// "/tickets/delete/:ticketsId"
+//
+//* "/user/signup"
+//* "/user/login"
+//
+// /Payment

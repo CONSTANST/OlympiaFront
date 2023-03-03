@@ -9,7 +9,7 @@ const TicketBooK = () => {
   const [category, setCategory] = useState("orchestre");
   const [mail, setMail] = useState("");
   const [username, setUsername] = useState("");
-
+  console.log(id);
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -42,9 +42,8 @@ const TicketBooK = () => {
     setUsername(username);
   };
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="seats">Number of seats (1-4):</label>
+    <div className="signup-container">
+      <form onSubmit={handleSubmit} className="signup-form">
         <input
           type="number"
           id="seats"
@@ -55,9 +54,6 @@ const TicketBooK = () => {
           max="4"
           required
         />
-      </div>
-      <div>
-        <label htmlFor="category">Category:</label>
         <select
           id="category"
           name="category"
@@ -68,9 +64,6 @@ const TicketBooK = () => {
           <option value="orchestre">Orchestre</option>
           <option value="mezzanine">Mezzanine</option>
         </select>
-      </div>
-      <div>
-        <label htmlFor="mail">Email:</label>
         <input
           type="email"
           id="mail"
@@ -79,9 +72,6 @@ const TicketBooK = () => {
           onChange={handleMailChange}
           required
         />
-      </div>
-      <div>
-        <label htmlFor="username">Username:</label>
         <input
           type="text"
           id="username"
@@ -90,9 +80,9 @@ const TicketBooK = () => {
           onChange={handleUsernameChange}
           required
         />
-      </div>
-      <button type="submit">Book tickets</button>
-    </form>
+        <button type="submit">Book tickets</button>
+      </form>
+    </div>
   );
 };
 
