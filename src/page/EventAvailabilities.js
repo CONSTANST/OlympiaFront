@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import {Link} from "react-router-dom";
 import axios from "axios";
 
 const EventList = () => {
@@ -13,30 +14,32 @@ const EventList = () => {
     event.preventDefault();
     try {
       const response = await axios.get(
-        `http://localhost:3000/events/availabilities?date=${date}`
+        `http://localhost:3000/event/availabilities?date=${date}`
       );
       setEvents(response.data);
     } catch (error) {
       console.error(error);
     }
   };
-  console.log(date);
-  //   console.log(events);
+
   return (
     <div>
       <form onSubmit={handleSubmit}>
         <label>
           Date :
-          <input type="date" value={date} onChange={handleDateChange} />
+          <input type="text" value={date} onChange={handleDateChange} />
         </label>
         <button type="submit">Rechercher</button>
       </form>
-      {events.length > 0 ? (
-        <ul>
+      {events ? (
+        <div>
           {events.map((event) => (
-            <li key={event.id}>{event.name}</li>
+            <div key={event._id}>
+              <p>{event.name}</p>
+              <Link to={`/ticketsBook/${event._id}`}>Réserver</Link>
+            </div>
           ))}
-        </ul>
+        </div>
       ) : (
         <p>Aucun événement à cette date</p>
       )}

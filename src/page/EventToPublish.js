@@ -61,7 +61,7 @@ const EventToPublish = () => {
           }}
         />
         <input
-          type="date"
+          type="text"
           placeholder="YYYY-MM-DD"
           value={date}
           onChange={(event) => {

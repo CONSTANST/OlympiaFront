@@ -15,7 +15,7 @@
 //* "/events"
 //* "/events/create"
 //* "/events/:id"
-//? "/events/availabilities"
+//* "/events/availabilities"
 // !"/event/modify/:eventId"
 // !"/events/delete/:eventId"
 //
@@ -26,4 +26,4 @@
 //* "/user/signup"
 //* "/user/login"
 //
-// !/Payment
+// ?/Payment
