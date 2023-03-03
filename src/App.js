@@ -6,6 +6,7 @@ import Home from "./page/Home";
 import Login from "./page/Login";
 import Event from "./page/Event";
 import Signup from "./page/Signup";
+import EventList from "./page/EventAvailabilities";
 import TicketBooK from "./page/TicketsBook";
 import EventToPublish from "./page/EventToPublish";
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/ticketsBook/:id" element={<TicketBooK />} />
         <Route path="/eventToPublish" element={<EventToPublish />} />
         <Route path="/event/:id" element={<Event />} />
+        <Route path="/events/availabilities" element={<EventList />} />
       </Routes>
     </Router>
   );

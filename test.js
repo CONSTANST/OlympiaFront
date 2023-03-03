@@ -10,19 +10,20 @@
 // getTime()
 // https://github.com/CONSTANST/OlympiaBack.git
 
-// pages a crée
+// pages a créer
+//* pages crées
 //* "/events"
 //* "/events/create"
-// "/events/:id"
-// "/events/availabilities"
-// "/event/modify/:eventId"
-// "/events/delete/:eventId"
+//* "/events/:id"
+//? "/events/availabilities"
+// !"/event/modify/:eventId"
+// !"/events/delete/:eventId"
 //
 //* "/tickets/book"
-// "/tickets"
-// "/tickets/delete/:ticketsId"
+// !"/tickets"
+// !"/tickets/delete/:ticketsId"
 //
 //* "/user/signup"
 //* "/user/login"
 //
-// /Payment
+// !/Payment

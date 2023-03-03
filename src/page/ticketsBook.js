@@ -68,6 +68,7 @@ const TicketBooK = () => {
           type="email"
           id="mail"
           name="mail"
+          placeholder="email"
           value={mail}
           onChange={handleMailChange}
           required
@@ -76,6 +77,7 @@ const TicketBooK = () => {
           type="text"
           id="username"
           name="username"
+          placeholder="Name"
           value={username}
           onChange={handleUsernameChange}
           required

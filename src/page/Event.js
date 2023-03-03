@@ -37,7 +37,7 @@ const Event = () => {
               </ul>
               <p>Orchestre Price : {item.orchestrePrice}</p>
               <p>Mezzanine Price : {item.mezzaninePrice}</p>
-              <Link to={`/ticketsBook/${event.id}`}>Réserver</Link>
+              <Link to={`/ticketsBook/${params.id}`}>Réserver</Link>
             </div>
           ))}
         </div>
