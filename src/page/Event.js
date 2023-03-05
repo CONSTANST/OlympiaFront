@@ -38,6 +38,7 @@ const Event = () => {
               <p>Orchestre Price : {item.orchestrePrice}</p>
               <p>Mezzanine Price : {item.mezzaninePrice}</p>
               <Link to={`/ticketsBook/${params.id}`}>Réserver</Link>
+              <Link to={`/modifyEvent/${params.id}`}>Modifier</Link>
             </div>
           ))}
         </div>
