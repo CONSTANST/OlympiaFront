@@ -35,8 +35,8 @@ const ModifyEvent = () => {
     }
   };
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <div className="signup-container">
+      <form onSubmit={handleSubmit} className="signup-form">
         <input
           type="date"
           value={date}

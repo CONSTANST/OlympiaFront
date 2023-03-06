@@ -14,13 +14,15 @@ function DeleteEvent() {
   };
 
   return (
-    <div>
-      <input
-        type="text"
-        value={eventId}
-        onChange={(e) => setEventId(e.target.value)}
-      />
-      <button onClick={handleDelete}>Supprimer</button>
+    <div className="signup-container">
+      <form className="signup-form">
+        <input
+          type="text"
+          value={eventId}
+          onChange={(event) => setEventId(event.target.value)}
+        />
+        <button onClick={handleDelete}>Supprimer</button>
+      </form>
     </div>
   );
 }

@@ -16,12 +16,12 @@
 //* "/events/create"
 //* "/events/:id"
 //* "/events/availabilities"
-// !"/event/modify/:eventId"
-// !"/events/delete/:eventId"
+//* "/event/modify/:eventId"
+//* "/events/delete/:eventId"
 //
 //* "/tickets/book"
-// !"/tickets"
-// !"/tickets/delete/:ticketsId"
+//! "/tickets"
+//* "/tickets/delete/:ticketsId"
 //
 //* "/user/signup"
 //* "/user/login"

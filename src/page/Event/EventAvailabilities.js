@@ -23,26 +23,26 @@ const EventList = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <div className="signup-container">
+      <form onSubmit={handleSubmit} className="signup-form">
         <label>
           Date :
           <input type="text" value={date} onChange={handleDateChange} />
         </label>
         <button type="submit">Rechercher</button>
+        {events ? (
+          <div>
+            {events.map((event) => (
+              <div key={event._id}>
+                <p>{event.name}</p>
+                <Link to={`/ticketsBook/${event._id}`}>Réserver</Link>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p>Aucun événement à cette date</p>
+        )}
       </form>
-      {events ? (
-        <div>
-          {events.map((event) => (
-            <div key={event._id}>
-              <p>{event.name}</p>
-              <Link to={`/ticketsBook/${event._id}`}>Réserver</Link>
-            </div>
-          ))}
-        </div>
-      ) : (
-        <p>Aucun événement à cette date</p>
-      )}
     </div>
   );
 };

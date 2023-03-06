@@ -11,10 +11,14 @@ const Event = () => {
   console.log(event);
   useEffect(() => {
     const fetchEvent = async () => {
-      const response = await axios.get(
-        `http://localhost:3000/events/${params.id}`
-      );
-      setEvent([response.data]);
+      try {
+        const response = await axios.get(
+          `http://localhost:3000/events/${params.id}`
+        );
+        setEvent([response.data]);
+      } catch (error) {
+        console.error(error.message);
+      }
     };
     fetchEvent();
   }, []);

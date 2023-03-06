@@ -19,12 +19,17 @@ const DeleteTicket = () => {
   };
 
   return (
-    <div>
+    <div className="signup-container">
       <h2>Annuler une réservation</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="signup-form">
         <label>
           ID de la réservation :
-          <input type="text" value={ticketsId} onChange={handleInputChange} />
+          <input
+            type="text"
+            placeholder="ID de la reservation"
+            value={ticketsId}
+            onChange={handleInputChange}
+          />
         </label>
         <button type="submit">Annuler</button>
       </form>
