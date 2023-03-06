@@ -1,6 +1,6 @@
 import axios from "axios";
-import {useEffect, useState} from "react";
-import {Navigate, useNavigate} from "react-router-dom";
+import {useState} from "react";
+import {useNavigate} from "react-router-dom";
 
 const EventToPublish = () => {
   const [file, setFile] = useState({});
@@ -11,8 +11,7 @@ const EventToPublish = () => {
   const [mezzanine, setMezzanine] = useState();
   const [orchestrePrice, setOrchestrePrice] = useState();
   const [mezzaninePrice, setMezzaninePrice] = useState();
-  // console.log(orchestrePrice);
-  // console.log(mezzaninePrice);
+
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {

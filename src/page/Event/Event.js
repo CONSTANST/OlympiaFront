@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from "react";
-import {useParams, useNavigate, Link} from "react-router-dom";
+import {useParams, Link} from "react-router-dom";
 
 import axios from "axios";
 
 const Event = () => {
   const params = useParams();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const [event, setEvent] = useState([]);
   console.log(event);
@@ -21,12 +21,13 @@ const Event = () => {
       }
     };
     fetchEvent();
-  }, []);
+  }, [params.id]);
 
   return (
     <div className="event-body">
       <div className="event-container">
         <div>
+          <Link to={`/modifyEvent/${params.id}`}>Modifier? </Link>
           {event.map((item) => (
             <div key={item._id}>
               <p>Date : {new Date(item.date).toLocaleDateString()}</p>
@@ -41,11 +42,11 @@ const Event = () => {
               </ul>
               <p>Orchestre Price : {item.orchestrePrice}</p>
               <p>Mezzanine Price : {item.mezzaninePrice}</p>
-              <Link to={`/ticketsBook/${params.id}`}>Réserver</Link>
-              <Link to={`/modifyEvent/${params.id}`}>Modifier</Link>
             </div>
           ))}
+          <Link to={`/ticketsBook/${params.id}`}>Réserver? </Link>
         </div>
+        <Link to={`/eventToPublish`}>D'autre événement à publier?</Link>
       </div>
     </div>
   );

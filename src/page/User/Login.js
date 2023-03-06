@@ -1,7 +1,7 @@
 import {useState} from "react";
 import {Link, useNavigate} from "react-router-dom";
 import axios from "axios";
-import ReactLoading from "react-loading";
+// import ReactLoading from "react-loading";
 
 const Login = () => {
   const [email, setEmail] = useState("");

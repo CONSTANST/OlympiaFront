@@ -16,31 +16,23 @@ const Home = () => {
     };
     fetchData();
   }, []);
+  console.log(events);
   return (
-    <div
-      style={{
-        display: "flex",
-        flexWrap: "wrap",
-        justifyContent: "spaceEvenly",
-      }}
-    >
+    <div className="event-body">
       <p>Hello</p>
       {events.map((event) => (
-        <div
-          key={event._id}
-          style={{
-            padding: 20,
-          }}
-        >
+        <div key={event._id} className="event-container">
           <h2 style={{color: "lightgray"}}>{event.name}</h2>
           <div key={event._id}>
             <p style={{color: "lightgray"}}>
-              Place restante en categorie Orchestre {event.seats.orchestre}
+              Place restante en categorie Orchestre {event.seats[0].orchestre}
             </p>
             <p style={{color: "lightgray"}}>
-              Place restante en categorie Mezzanine {event.seats.mezzanine}
+              Place restante en categorie Mezzanine {event.seats[0].mezzanine}
             </p>
+            <p style={{color: "lightgray"}}>{event.date}</p>
             <Link to={`/ticketsBook/${event._id}`}>Réserver</Link>
+            <Link to={`/event/${event._id}`}>Plus de détails?</Link>
           </div>
         </div>
       ))}

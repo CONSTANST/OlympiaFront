@@ -6,7 +6,9 @@ function DeleteEvent() {
 
   const handleDelete = async () => {
     try {
-      const response = await axios.delete(`/events/delete/${eventId}`);
+      const response = await axios.delete(
+        `http://localhost:3000/events/delete/${eventId}`
+      );
       console.log(response.data.message);
     } catch (error) {
       console.error(error.message);

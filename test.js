@@ -20,10 +20,10 @@
 //* "/events/delete/:eventId"
 //
 //* "/tickets/book"
-//! "/tickets"
+//* "/tickets"
 //* "/tickets/delete/:ticketsId"
 //
 //* "/user/signup"
 //* "/user/login"
 //
-// ?/Payment
+//? "/Payment"

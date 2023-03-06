@@ -1,7 +1,9 @@
 import React, {useState} from "react";
 import axios from "axios";
+import {useParams} from "react-router-dom";
 
 const DeleteTicket = () => {
+  const {id} = useParams();
   const [ticketsId, setTicketsId] = useState("");
 
   const handleInputChange = (event) => {
@@ -11,7 +13,9 @@ const DeleteTicket = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.delete(`/tickets/delete/${ticketsId}`);
+      const response = await axios.delete(
+        `http://localhost:3000/tickets/delete/${id}`
+      );
       console.log(response.data);
     } catch (error) {
       console.error(error.message);
@@ -23,10 +27,10 @@ const DeleteTicket = () => {
       <h2>Annuler une réservation</h2>
       <form onSubmit={handleSubmit} className="signup-form">
         <label>
-          ID de la réservation :
+          Votre email :
           <input
             type="text"
-            placeholder="ID de la reservation"
+            placeholder="email"
             value={ticketsId}
             onChange={handleInputChange}
           />

@@ -7,24 +7,28 @@ import Home from "./page/Home";
 import Login from "./page/User/Login";
 import Event from "./page/Event/Event";
 import Signup from "./page/User/Signup";
-import EventList from "./page/Event/EventAvailabilities";
-import TicketBooK from "./page/Tickets/TicketsBook";
-import EventToPublish from "./page/Event/EventToPublish";
+import Header from "./components/Header";
+import TicketSearch from "./page/Tickets/Ticket";
 import DeleteEvent from "./page/Event/DeleteEvent";
-import DeleteTicket from "./page/Tickets/DeleteTickets";
 import ModifyEvent from "./page/Event/ModifyEvent";
+import TicketBooK from "./page/Tickets/TicketsBook";
+import DeleteTicket from "./page/Tickets/DeleteTickets";
+import EventList from "./page/Event/EventAvailabilities";
+import EventToPublish from "./page/Event/EventToPublish";
 
 function App() {
   return (
     <Router>
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/event/:id" element={<Event />} />
+        <Route path="/tickets" element={<TicketSearch />} />
         <Route path="/modifyEvent" element={<ModifyEvent />} />
         <Route path="/deleteEvent" element={<DeleteEvent />} />
-        <Route path="/deleteTicket" element={<DeleteTicket />} />
+        <Route path="/deleteTicket/:id" element={<DeleteTicket />} />
         <Route path="/ticketsBook/:id" element={<TicketBooK />} />
         <Route path="/eventToPublish" element={<EventToPublish />} />
         <Route path="/events/availabilities" element={<EventList />} />
