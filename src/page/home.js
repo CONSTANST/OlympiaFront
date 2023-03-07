@@ -30,7 +30,9 @@ const Home = () => {
             <p style={{color: "lightgray"}}>
               Place restante en categorie Mezzanine {event.seats[0].mezzanine}
             </p>
-            <p style={{color: "lightgray"}}>{event.date}</p>
+            <p style={{color: "lightgray"}}>
+              {new Date(event.date).toLocaleDateString()}
+            </p>
             <Link to={`/ticketsBook/${event._id}`}>Réserver</Link>
             <Link to={`/event/${event._id}`}>Plus de détails?</Link>
           </div>

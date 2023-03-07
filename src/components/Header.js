@@ -16,7 +16,7 @@ const Header = () => {
             Sign Up
           </NavLink>
           <NavLink to="/event/1" activeClassName="active">
-            Event 1
+            Event/:id
           </NavLink>
           <NavLink to="/tickets" activeClassName="active">
             Ticket Search
@@ -31,7 +31,7 @@ const Header = () => {
             Delete Ticket
           </NavLink>
           <NavLink to="/ticketsBook/1" activeClassName="active">
-            Ticket Book
+            Ticket Book/:id
           </NavLink>
           <NavLink to="/eventToPublish" activeClassName="active">
             Event To Publish
