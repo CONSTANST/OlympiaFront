@@ -4,7 +4,7 @@ import {useParams} from "react-router-dom";
 
 const TicketBooK = () => {
   const {id} = useParams();
-  const [events, setEvents] = useState([]);
+
   const [seats, setSeats] = useState(1);
   const [category, setCategory] = useState("orchestre");
   const [mail, setMail] = useState("");
@@ -20,7 +20,7 @@ const TicketBooK = () => {
         mail,
         username,
       });
-      setEvents(response.data);
+      console.log(response);
     } catch (error) {
       console.error(error);
     }

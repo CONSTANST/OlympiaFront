@@ -30,6 +30,7 @@ const ModifyEvent = () => {
         `http://localhost:3000/event/modify/${params.id}`,
         eventModified
       );
+      console.log(response);
     } catch (error) {
       console.log(error.response.data.message);
     }

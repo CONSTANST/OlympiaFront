@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: darkred;
+  background-color: rgb(168, 0, 0);
   height: 100vh;
   width: 100vw;
 }
@@ -80,4 +80,62 @@ Event /// /*/
   justify-content: space-around;
   padding: 30px;
   gap: 30px;
+}
+/*/////////////////////////////////////////////////////////*/
+/*/ ////////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////////*/
+/*/
+preview /// /*/
+/*/////////////////////////////////////////////////////////*/
+/*/ ////////////////////////////////////////////////////////*/
+
+.preview-image {
+  border: 1px #ebedee dashed;
+  border-radius: 3px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+}
+.preview-image img {
+  height: 90%;
+  margin: 0 10px;
+}
+.remove-img-button {
+  position: relative;
+  color: black;
+  background-color: white;
+  right: 60px;
+  bottom: 70px;
+  height: 25px;
+  line-height: 25px;
+  width: 30px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 700;
+  cursor: pointer;
+}
+.preview-without {
+  border: 1px rgb(168, 0, 0) dashed;
+  border-radius: 3px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.input-design-default {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgb(168, 0, 0);
+  border-radius: 4px;
+  height: 45px;
+  width: 200px;
+}
+.label-file {
+  cursor: pointer;
+  color: rgb(168, 0, 0);
+  font-weight: bold;
+}
+.input-sign {
+  font-size: 40px;
 }

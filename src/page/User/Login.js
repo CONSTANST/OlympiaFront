@@ -7,7 +7,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
 
   const navigate = useNavigate();
   const handleSubmit = async (event) => {
@@ -25,7 +25,7 @@ const Login = () => {
     } catch (error) {
       if (error.response.status === 401 || error.response.status === 400) {
         setErrorMessage("Mauvais email et/ou mot de passe");
-        setIsLoading(false);
+        // setIsLoading(false);
       }
     }
   };

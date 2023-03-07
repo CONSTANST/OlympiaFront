@@ -107,6 +107,29 @@ const EventToPublish = () => {
             setPreview(URL.createObjectURL(event.target.files[0]));
           }}
         />
+        {preview ? (
+          <div className="preview-image">
+            <img src={preview} alt="pré-visualisation" />
+            <div
+              className="remove-img-button"
+              onClick={() => {
+                setPreview("");
+              }}
+            >
+              X
+            </div>
+          </div>
+        ) : (
+          <div className="preview-without">
+            <div className="input-design-default">
+              <label htmlFor="file" className="label-file">
+                <span className="input-sign">+</span>
+                <span>Ajoute une photo</span>
+              </label>
+            </div>
+          </div>
+        )}
+
         <button type="submit">Crée l'événement</button>
       </form>
     </div>
