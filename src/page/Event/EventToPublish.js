@@ -18,14 +18,14 @@ const EventToPublish = () => {
     event.preventDefault();
     try {
       const formData = new FormData();
-      formData.append("event_img", file);
+      formData.append("event_image", file);
       formData.append("name", name);
       formData.append("date", date);
       formData.append("orchestre", orchestre);
       formData.append("mezzanine", mezzanine);
       formData.append("orchestrePrice", orchestrePrice);
       formData.append("mezzaninePrice", mezzaninePrice);
-
+      console.log(formData);
       const response = await axios.post(
         `http://localhost:3000/events/create`,
         formData
@@ -103,7 +103,7 @@ const EventToPublish = () => {
           type="file"
           id="file"
           onChange={(event) => {
-            setFile(event.target.value);
+            setFile(event.target.files[0]);
             setPreview(URL.createObjectURL(event.target.files[0]));
           }}
         />

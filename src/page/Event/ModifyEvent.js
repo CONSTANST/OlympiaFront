@@ -26,7 +26,7 @@ const ModifyEvent = () => {
       ],
       orchestrePrice,
       mezzaninePrice,
-      event_img: file,
+      event_image: file,
     };
     try {
       const response = await axios.put(
@@ -84,7 +84,7 @@ const ModifyEvent = () => {
           type="file"
           id="file"
           onChange={(event) => {
-            setFile(event.target.value);
+            setFile(event.target.files[0]);
             setPreview(URL.createObjectURL(event.target.files[0]));
           }}
         />

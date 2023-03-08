@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 
 const Home = () => {
   const [events, setEvents] = useState([]);
-
+  console.log(events);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -26,7 +26,7 @@ const Home = () => {
           <div key={event._id} className="event-container">
             {localStorage.setItem("eventName", event.name)}
             <h2 style={{color: "lightgray"}}>{event.name}</h2>
-
+            <img src={event.event_image.url} alt={event.name} />
             <div>
               <p style={{color: "lightgray"}}>
                 Place restante en categorie Orchestre {event.seats[0].orchestre}

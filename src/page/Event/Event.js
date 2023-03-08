@@ -33,17 +33,17 @@ const Event = () => {
               <p>Date : {new Date(item.date).toLocaleDateString()}</p>
               <p>Name : {item.name}</p>
               {localStorage.setItem("eventName", item.name)}
+              <img src={item.event_image.url} alt={item.name} />
               <p>Seats :</p>
-              <ul>
-                {item.seats.map((seat) => (
-                  <li key={seat._id}>
-                    Orchestre : {seat.orchestre}, Mezzanine : {seat.mezzanine}
-                  </li>
-                ))}
-              </ul>
+
+              {item.seats.map((seat) => (
+                <p key={seat._id}>
+                  Orchestre : {seat.orchestre}, Mezzanine : {seat.mezzanine}
+                </p>
+              ))}
+
               <p>Orchestre Price : {item.orchestrePrice}</p>
               <p>Mezzanine Price : {item.mezzaninePrice}</p>
-              <img />
             </div>
           ))}
         </div>
