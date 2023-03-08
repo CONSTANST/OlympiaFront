@@ -4,7 +4,7 @@ import axios from "axios";
 
 const EventList = () => {
   const [date, setDate] = useState("");
-  const [events, setEvents] = useState([]);
+  const [events, setEvents] = useState();
 
   const handleDateChange = (event) => {
     setDate(event.target.value);

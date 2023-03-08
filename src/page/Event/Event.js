@@ -26,12 +26,13 @@ const Event = () => {
   return (
     <div className="event-body">
       <div className="event-container">
+        <Link to={`/modifyEvent/${params.id}`}>Modifier? </Link>
         <div>
-          <Link to={`/modifyEvent/${params.id}`}>Modifier? </Link>
           {event.map((item) => (
             <div key={item._id}>
               <p>Date : {new Date(item.date).toLocaleDateString()}</p>
               <p>Name : {item.name}</p>
+              {localStorage.setItem("eventName", item.name)}
               <p>Seats :</p>
               <ul>
                 {item.seats.map((seat) => (
@@ -42,10 +43,11 @@ const Event = () => {
               </ul>
               <p>Orchestre Price : {item.orchestrePrice}</p>
               <p>Mezzanine Price : {item.mezzaninePrice}</p>
+              <img />
             </div>
           ))}
-          <Link to={`/ticketsBook/${params.id}`}>Réserver? </Link>
         </div>
+        <Link to={`/ticketsBook/${params.id}`}>Réserver?</Link>
         <Link to={`/eventToPublish`}>D'autre événement à publier?</Link>
       </div>
     </div>

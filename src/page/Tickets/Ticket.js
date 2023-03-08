@@ -20,7 +20,7 @@ function TicketSearch() {
         setTickets([]);
       }
     } catch (error) {
-      setErrorMessage(error.message);
+      setErrorMessage(error.response);
       setTickets([]);
     }
   };

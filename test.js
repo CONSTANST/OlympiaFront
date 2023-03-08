@@ -8,17 +8,15 @@
 // si cookies durée de vie courte
 // gettime natif js millisecond
 // getTime()
-//
+
 // !Passage de donnée d'une page à l'autre. (item.name [page event, home, modifyEvent]) vers ticketsbook puis vers payment.
-// ! gestion des roles et token
-// !Probleme d'envoie de photo vers cloudinary
+// !Gestion des roles et token
+//// Probleme d'envoie de photo vers cloudinary
 // !finir le payment
 // !remettre un tickets de caisse par mail ?
-//
-//
-//
+// !Style
 
-// pages a créer
+// pages à créer
 //* pages crées
 //* "/events"
 //* "/events/create"

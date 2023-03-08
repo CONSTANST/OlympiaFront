@@ -1,15 +1,26 @@
 import axios from "axios";
 import {useState} from "react";
-import {useParams} from "react-router-dom";
+import {
+  useParams,
+  Link,
+  // useLocation
+} from "react-router-dom";
 
 const TicketBooK = () => {
   const {id} = useParams();
+  const eventName = localStorage.getItem("eventName");
 
   const [seats, setSeats] = useState(1);
   const [category, setCategory] = useState("orchestre");
   const [mail, setMail] = useState("");
   const [username, setUsername] = useState("");
-  console.log(id);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const cachedResponse = localStorage.getItem("response");
+  const [response, setResponse] = useState(
+    cachedResponse ? JSON.parse(cachedResponse) : null
+  );
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -20,7 +31,11 @@ const TicketBooK = () => {
         mail,
         username,
       });
-      console.log(response);
+      console.log(response.data.message);
+      if (response) {
+        setIsLoading(true);
+        setResponse(response);
+      }
     } catch (error) {
       console.error(error);
     }
@@ -41,9 +56,10 @@ const TicketBooK = () => {
     const username = event.target.value;
     setUsername(username);
   };
-  return (
+  return !isLoading ? (
     <div className="signup-container">
       <form onSubmit={handleSubmit} className="signup-form">
+        <h2>{eventName}</h2>
         <input
           type="number"
           id="seats"
@@ -84,6 +100,13 @@ const TicketBooK = () => {
         />
         <button type="submit">Book tickets</button>
       </form>
+    </div>
+  ) : (
+    <div className="signup-container">
+      <div className="signup-form">
+        <p>{response.data.message}</p>
+        <Link to={`/`}>accueil</Link>
+      </div>
     </div>
   );
 };
