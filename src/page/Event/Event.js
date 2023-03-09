@@ -49,6 +49,7 @@ const Event = () => {
           ))}
         </div>
         <Link to={`/ticketsBook/${params.id}`}>Réserver?</Link>
+        <Link to={`/deleteEvent/${params.id}`}>Supprimer l'événement</Link>
         <Link to={`/eventToPublish`}>D'autre événement à publier?</Link>
       </div>
     </div>

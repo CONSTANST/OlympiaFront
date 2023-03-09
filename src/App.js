@@ -26,7 +26,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/event/:id" element={<Event />} />
         <Route path="/tickets" element={<TicketSearch />} />
-        <Route path="/deleteEvent" element={<DeleteEvent />} />
+        <Route path="/deleteEvent/:id" element={<DeleteEvent />} />
         <Route path="/modifyEvent/:id" element={<ModifyEvent />} />
         <Route path="/deleteTicket/:id" element={<DeleteTicket />} />
         <Route path="/ticketsBook/:id" element={<TicketBooK />} />

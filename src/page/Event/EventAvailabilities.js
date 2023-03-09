@@ -5,7 +5,7 @@ import axios from "axios";
 const EventList = () => {
   const [date, setDate] = useState("");
   const [events, setEvents] = useState();
-
+  console.log(events);
   const handleDateChange = (event) => {
     setDate(event.target.value);
   };
@@ -31,10 +31,26 @@ const EventList = () => {
         </label>
         <button type="submit">Rechercher</button>
         {events ? (
-          <div>
+          <div className="event-body">
             {events.map((event) => (
-              <div key={event._id}>
-                <p>{event.name}</p>
+              <div key={event._id} className="event-container">
+                <div>
+                  <p>Date : {new Date(event.date).toLocaleDateString()}</p>
+                  <p>Name : {event.name}</p>
+                  {localStorage.setItem("eventName", event.name)}
+                  <img src={event.event_image.url} alt={event.name} />
+                  {localStorage.setItem("eventImage", event.event_image.url)}
+                  <p>Seats :</p>
+
+                  {event.seats.map((seat) => (
+                    <p key={seat._id}>
+                      Orchestre : {seat.orchestre}, Mezzanine : {seat.mezzanine}
+                    </p>
+                  ))}
+
+                  <p>Orchestre Price : {event.orchestrePrice}</p>
+                  <p>Mezzanine Price : {event.mezzaninePrice}</p>
+                </div>
                 <Link to={`/ticketsBook/${event._id}`}>Réserver</Link>
               </div>
             ))}

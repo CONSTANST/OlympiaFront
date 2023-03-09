@@ -21,6 +21,7 @@ function DeleteEvent() {
         <input
           type="text"
           value={eventId}
+          placeholder={eventId}
           onChange={(event) => setEventId(event.target.value)}
         />
         <button onClick={handleDelete}>Supprimer</button>
