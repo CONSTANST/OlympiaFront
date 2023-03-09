@@ -1,12 +1,14 @@
 import axios from "axios";
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import {
   useParams,
   Link,
+  useNavigate,
   // useLocation
 } from "react-router-dom";
 
 const TicketBooK = () => {
+  const navigate = useNavigate();
   const {id} = useParams();
   const eventName = localStorage.getItem("eventName");
 
@@ -16,10 +18,25 @@ const TicketBooK = () => {
   const [username, setUsername] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
+  const [orchestrePrice, setOrchestrePrice] = useState(0);
+  const [mezzaninePrice, setMezzaninePrice] = useState(0);
+
   const cachedResponse = localStorage.getItem("response");
   const [response, setResponse] = useState(
     cachedResponse ? JSON.parse(cachedResponse) : null
   );
+  useEffect(() => {
+    const fetchPrices = async () => {
+      try {
+        const response = await axios.get(`http://localhost:3000/events/${id}`);
+        setOrchestrePrice(response.data.orchestrePrice);
+        setMezzaninePrice(response.data.mezzaninePrice);
+      } catch (error) {
+        console.error(error.message);
+      }
+    };
+    fetchPrices();
+  }, [id]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -35,6 +52,9 @@ const TicketBooK = () => {
       if (response) {
         setIsLoading(true);
         setResponse(response);
+        navigate("/payment", {
+          state: {mezzaninePrice, seats, category, orchestrePrice, eventName},
+        });
       }
     } catch (error) {
       console.error(error);

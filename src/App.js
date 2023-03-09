@@ -4,6 +4,7 @@ import "./App.css";
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
 import Home from "./page/Home";
+import Payment from "./page/Payment";
 import Login from "./page/User/Login";
 import Event from "./page/Event/Event";
 import Signup from "./page/User/Signup";
@@ -24,6 +25,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/payment" element={<Payment />} />
         <Route path="/event/:id" element={<Event />} />
         <Route path="/tickets" element={<TicketSearch />} />
         <Route path="/deleteEvent/:id" element={<DeleteEvent />} />

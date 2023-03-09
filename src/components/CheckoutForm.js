@@ -2,7 +2,7 @@ import {useState} from "react";
 import {CardElement, useStripe, useElements} from "@stripe/react-stripe-js";
 import axios from "axios";
 
-const CheckoutForm = () => {
+const CheckoutForm = ({productName, totalPrice}) => {
   const [isPaid, setIsPaid] = useState(false);
   const stripe = useStripe();
   const elements = useElements();
@@ -14,8 +14,8 @@ const CheckoutForm = () => {
         name: "user.id",
       });
       const response = await axios.post(`http://localhost:3000/payment`, {
-        amount: "total",
-        title: "event.name",
+        amount: totalPrice,
+        title: productName,
         token: stripeResponse.token.id,
       });
       if (response.data) {

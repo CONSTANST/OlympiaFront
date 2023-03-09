@@ -9,7 +9,7 @@
 // gettime natif js millisecond
 // getTime()
 
-// !Passage de donnée d'une page à l'autre. (item.name [page event, home, modifyEvent]) vers ticketsbook puis vers payment.
+// !Passage de donnée d'une page à l'autre. (item.name  home) vers ticketsbook puis vers payment.
 // !Gestion des roles et token
 //// Probleme d'envoie de photo vers cloudinary
 // !finir le payment

@@ -6,7 +6,7 @@ function TicketSearch() {
   const [email, setEmail] = useState("");
   const [tickets, setTickets] = useState([]);
   const [errorMessage, setErrorMessage] = useState("");
-  console.log(tickets);
+
   const handleSearch = async () => {
     try {
       const response = await axios.post("http://localhost:3000/tickets", {
