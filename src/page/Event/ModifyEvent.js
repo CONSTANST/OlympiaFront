@@ -4,6 +4,9 @@ import axios from "axios";
 
 const ModifyEvent = () => {
   const params = useParams();
+  const eventName = localStorage.getItem("eventName");
+  const eventImage = localStorage.getItem("eventImage");
+
   const [date, setDate] = useState();
   const [name, setName] = useState();
   const [orchestre, setOrchestre] = useState();
@@ -12,26 +15,22 @@ const ModifyEvent = () => {
   const [mezzaninePrice, setMezzaninePrice] = useState();
   const [file, setFile] = useState({});
   const [preview, setPreview] = useState("");
-
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const eventModified = {
-      date,
-      name,
-      seats: [
-        {
-          orchestre,
-          mezzanine,
-        },
-      ],
-      orchestrePrice,
-      mezzaninePrice,
-      event_image: file,
-    };
+
     try {
+      const formDataToModify = new FormData();
+      formDataToModify.append("event_image", file);
+      formDataToModify.append("name", name);
+      formDataToModify.append("date", date);
+      formDataToModify.append("orchestre", orchestre);
+      formDataToModify.append("mezzanine", mezzanine);
+      formDataToModify.append("orchestrePrice", orchestrePrice);
+      formDataToModify.append("mezzaninePrice", mezzaninePrice);
+      console.log(formDataToModify);
       const response = await axios.put(
         `http://localhost:3000/event/modify/${params.id}`,
-        eventModified
+        formDataToModify
       );
       console.log(response);
     } catch (error) {
@@ -41,7 +40,9 @@ const ModifyEvent = () => {
   return (
     <div className="signup-container">
       <form onSubmit={handleSubmit} className="signup-form">
-        <p>Modifier l'evenement {}</p>
+        <img src={eventImage} alt={eventName} />
+        <p>Modifier l'evenement {eventName}</p>
+
         <input
           type="text"
           placeholder="YYYY-MM-DD"

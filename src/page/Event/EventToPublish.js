@@ -25,7 +25,7 @@ const EventToPublish = () => {
       formData.append("mezzanine", mezzanine);
       formData.append("orchestrePrice", orchestrePrice);
       formData.append("mezzaninePrice", mezzaninePrice);
-      console.log(formData);
+
       const response = await axios.post(
         `http://localhost:3000/events/create`,
         formData

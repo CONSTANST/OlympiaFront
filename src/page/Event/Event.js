@@ -34,6 +34,7 @@ const Event = () => {
               <p>Name : {item.name}</p>
               {localStorage.setItem("eventName", item.name)}
               <img src={item.event_image.url} alt={item.name} />
+              {localStorage.setItem("eventImage", item.event_image.url)}
               <p>Seats :</p>
 
               {item.seats.map((seat) => (
