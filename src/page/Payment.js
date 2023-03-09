@@ -4,10 +4,12 @@ import {Elements} from "@stripe/react-stripe-js";
 import CheckoutForm from "../components/CheckoutForm";
 
 const Payment = () => {
-  const stripePromise = loadStripe("YOUR_STRIPE_PUBLIC_KEY");
+  const stripePromise = loadStripe(
+    "pk_test_51MbLbgGzrh9Ois4wYtKRAZkaUaN5Qji9chIMO56r3cainb3IVYUeEGISXMfR0G2wXDCAgPDHYkJdiEWUqS9N8cB100B2y0HzYb"
+  );
   const location = useLocation();
 
-  const {seats, category, mezzaninePrice, orchestrePrice, eventName} =
+  const {seats, category, mezzaninePrice, orchestrePrice, eventName, mail} =
     location.state;
 
   const totalPrice =
@@ -26,8 +28,15 @@ const Payment = () => {
             {totalPrice} € (frais de protection et frais de port inclus).
           </p>
           <div className="divider" />
-          <Elements stripe={stripePromise}>
-            <CheckoutForm productName={eventName} totalPrice={totalPrice} />
+          <Elements
+            stripe={stripePromise}
+            options={{style: {base: {fontSize: "16px", height: "100px"}}}}
+          >
+            <CheckoutForm
+              productName={eventName}
+              totalPrice={totalPrice}
+              name={mail}
+            />
           </Elements>
         </div>
       </div>

@@ -53,7 +53,14 @@ const TicketBooK = () => {
         setIsLoading(true);
         setResponse(response);
         navigate("/payment", {
-          state: {mezzaninePrice, seats, category, orchestrePrice, eventName},
+          state: {
+            mezzaninePrice,
+            seats,
+            category,
+            orchestrePrice,
+            eventName,
+            mail,
+          },
         });
       }
     } catch (error) {

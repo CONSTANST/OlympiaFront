@@ -2,7 +2,7 @@ import {useState} from "react";
 import {CardElement, useStripe, useElements} from "@stripe/react-stripe-js";
 import axios from "axios";
 
-const CheckoutForm = ({productName, totalPrice}) => {
+const CheckoutForm = ({productName, totalPrice, mail}) => {
   const [isPaid, setIsPaid] = useState(false);
   const stripe = useStripe();
   const elements = useElements();
@@ -11,8 +11,9 @@ const CheckoutForm = ({productName, totalPrice}) => {
       event.preventDefault();
       const cardElement = elements.getElement(CardElement);
       const stripeResponse = await stripe.createToken(cardElement, {
-        name: "user.id",
+        name: mail,
       });
+      console.log(stripeResponse);
       const response = await axios.post(`http://localhost:3000/payment`, {
         amount: totalPrice,
         title: productName,
@@ -31,7 +32,7 @@ const CheckoutForm = ({productName, totalPrice}) => {
     <p>Merci pour votre achat.</p>
   ) : (
     <form onSubmit={handleSubmit}>
-      <CardElement />
+      <CardElement style={{height: "500px"}} />
       <button type="submit" disable={!stripe}>
         Réservez
       </button>
