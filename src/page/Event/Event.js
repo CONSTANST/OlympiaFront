@@ -25,9 +25,8 @@ const Event = () => {
 
   return (
     <div className="event-body">
-      <div className="event-container">
-        <Link to={`/modifyEvent/${params.id}`}>Modifier? </Link>
-        <div>
+      <div>
+        <div className="event-container">
           {event.map((item) => (
             <div key={item._id}>
               <p>Date : {new Date(item.date).toLocaleDateString()}</p>
@@ -47,10 +46,19 @@ const Event = () => {
               <p>Mezzanine Price : {item.mezzaninePrice}</p>
             </div>
           ))}
+          <Link to={`/ticketsBook/${params.id}`} className="event-link">
+            Réserver?
+          </Link>
         </div>
-        <Link to={`/ticketsBook/${params.id}`}>Réserver?</Link>
-        <Link to={`/deleteEvent/${params.id}`}>Supprimer l'événement</Link>
-        <Link to={`/eventToPublish`}>D'autre événement à publier?</Link>
+        <Link to={`/modifyEvent/${params.id}`} className="event-link">
+          Modifier?{" "}
+        </Link>
+        <Link to={`/deleteEvent/${params.id}`} className="event-link">
+          Supprimer l'événement
+        </Link>
+        <Link to={`/eventToPublish`} className="event-link">
+          D'autre événement à publier?
+        </Link>
       </div>
     </div>
   );
