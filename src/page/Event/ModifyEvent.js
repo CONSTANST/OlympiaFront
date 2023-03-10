@@ -29,7 +29,7 @@ const ModifyEvent = () => {
       formDataToModify.append("mezzaninePrice", mezzaninePrice);
       console.log(formDataToModify);
       const response = await axios.put(
-        `http://localhost:3000/event/modify/${params.id}`,
+        `https://olymtest--olympia-back-end--m45nvxqtn8py.code.run/event/modify/${params.id}`,
         formDataToModify
       );
       console.log(response);

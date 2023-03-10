@@ -7,7 +7,7 @@ function DeleteEvent() {
   const handleDelete = async () => {
     try {
       const response = await axios.delete(
-        `http://localhost:3000/events/delete/${eventId}`
+        `https://olymtest--olympia-back-end--m45nvxqtn8py.code.run/events/delete/${eventId}`
       );
       console.log(response.data.message);
     } catch (error) {

@@ -27,7 +27,7 @@ const EventToPublish = () => {
       formData.append("mezzaninePrice", mezzaninePrice);
 
       const response = await axios.post(
-        `http://localhost:3000/events/create`,
+        `https://olymtest--olympia-back-end--m45nvxqtn8py.code.run/events/create`,
         formData
         // {
         //   headers: {

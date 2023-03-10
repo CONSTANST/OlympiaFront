@@ -14,11 +14,14 @@ const CheckoutForm = ({productName, totalPrice, mail}) => {
         name: mail,
       });
       console.log(stripeResponse);
-      const response = await axios.post(`http://localhost:3000/payment`, {
-        amount: totalPrice,
-        title: productName,
-        token: stripeResponse.token.id,
-      });
+      const response = await axios.post(
+        `https://olymtest--olympia-back-end--m45nvxqtn8py.code.run/payment`,
+        {
+          amount: totalPrice,
+          title: productName,
+          token: stripeResponse.token.id,
+        }
+      );
       console.log(response);
       if (response.data) {
         setIsPaid(true);

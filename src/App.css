@@ -6,6 +6,7 @@
   height: 100%;
   width: 100%;
   font-family: "Roboto", sans-serif;
+  display: flex;
 }
 /*/////////////////////////////////////////////////////////*/
 /*/ ////////////////////////////////////////////////////////*/
@@ -81,9 +82,9 @@ Event /// /*/
 
 .event-body {
   font-family: "Roboto", sans-serif;
-  height: calc(100vh - 50px);
+  height: 100%;
   background-color: rgb(168, 0, 0);
-  padding: 20px;
+  padding: 40px;
   gap: 10px;
 }
 .event-container {
@@ -91,8 +92,9 @@ Event /// /*/
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  width: 500px;
+  justify-content: space-evenly;
+  width: 400px;
+  height: 400px;
   margin: 10px auto;
   padding: 30px;
   gap: 30px;
@@ -122,6 +124,8 @@ Event /// /*/
 }
 .event-container img {
   object-fit: contain;
+  width: 220px;
+  height: 220px;
 }
 .event-container p {
   font-family: "Roboto", sans-serif;

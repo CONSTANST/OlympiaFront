@@ -28,7 +28,9 @@ const TicketBooK = () => {
   useEffect(() => {
     const fetchPrices = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/events/${id}`);
+        const response = await axios.get(
+          `https://olymtest--olympia-back-end--m45nvxqtn8py.code.run/events/${id}`
+        );
         setOrchestrePrice(response.data.orchestrePrice);
         setMezzaninePrice(response.data.mezzaninePrice);
       } catch (error) {
@@ -41,13 +43,16 @@ const TicketBooK = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post("http://localhost:3000/tickets/book", {
-        eventId: id,
-        seats,
-        category,
-        mail,
-        username,
-      });
+      const response = await axios.post(
+        "https://olymtest--olympia-back-end--m45nvxqtn8py.code.run/tickets/book",
+        {
+          eventId: id,
+          seats,
+          category,
+          mail,
+          username,
+        }
+      );
       console.log(response.data.message);
       if (response) {
         setIsLoading(true);

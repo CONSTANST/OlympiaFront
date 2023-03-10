@@ -13,7 +13,7 @@ const Event = () => {
     const fetchEvent = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/events/${params.id}`
+          `https://olymtest--olympia-back-end--m45nvxqtn8py.code.run/events/${params.id}`
         );
         setEvent([response.data]);
       } catch (error) {

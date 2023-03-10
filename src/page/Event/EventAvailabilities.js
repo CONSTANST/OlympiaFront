@@ -14,7 +14,7 @@ const EventList = () => {
     event.preventDefault();
     try {
       const response = await axios.get(
-        `http://localhost:3000/event/availabilities?date=${date}`
+        `https://olymtest--olympia-back-end--m45nvxqtn8py.code.run/event/availabilities?date=${date}`
       );
       setEvents(response.data);
     } catch (error) {

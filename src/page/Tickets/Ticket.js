@@ -9,9 +9,12 @@ function TicketSearch() {
 
   const handleSearch = async () => {
     try {
-      const response = await axios.post("http://localhost:3000/tickets", {
-        mail: email,
-      });
+      const response = await axios.post(
+        "https://olymtest--olympia-back-end--m45nvxqtn8py.code.run/tickets",
+        {
+          mail: email,
+        }
+      );
       if (response.data) {
         setTickets(response.data);
         setErrorMessage("");

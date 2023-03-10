@@ -8,7 +8,9 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/events`);
+        const response = await axios.get(
+          `https://olymtest--olympia-back-end--m45nvxqtn8py.code.run/events`
+        );
         setEvents(response.data);
       } catch (error) {
         console.log(error);

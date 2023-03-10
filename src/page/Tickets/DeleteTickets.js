@@ -17,7 +17,7 @@ const DeleteTicket = () => {
     event.preventDefault();
     try {
       const response = await axios.delete(
-        `http://localhost:3000/tickets/delete/${id}`
+        `https://olymtest--olympia-back-end--m45nvxqtn8py.code.run/tickets/delete/${id}`
       );
       console.log(response.data);
       setIsDeleted(true);
