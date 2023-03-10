@@ -220,6 +220,7 @@ preview /// /*/
 /*/ ////////////////////////////////////////////////////////*/
 .bm-menu {
   font-family: "Roboto", sans-serif;
+  overflow: hidden;
   font-size: 24px;
   padding: 24px 0;
   width: 300px;
@@ -229,6 +230,7 @@ preview /// /*/
 
 .bm-menu-item {
   font-family: "Roboto", sans-serif;
+  overflow: hidden;
   padding: 8px 16px;
   margin: 8px 0;
   display: block;
@@ -243,6 +245,7 @@ preview /// /*/
 }
 
 .bm-burger-button {
+  overflow: hidden;
   position: fixed;
   width: 36px;
   height: 30px;
@@ -251,6 +254,7 @@ preview /// /*/
 }
 
 .bm-burger-bars {
+  overflow: hidden;
   background-color: #fff;
 }
 

@@ -12,9 +12,9 @@
 // !Passage de donnée d'une page à l'autre. (item.name  home) vers ticketsbook puis vers payment.
 // !Gestion des roles et token
 //// Probleme d'envoie de photo vers cloudinary
-// !finir le payment
+//// finir le payment
 // !remettre un tickets de caisse par mail ?
-// !Style
+//// Style
 
 // pages à créer
 //* pages crées
@@ -32,4 +32,4 @@
 //* "/user/signup"
 //* "/user/login"
 //
-//? "/Payment"
+//* "/Payment"
