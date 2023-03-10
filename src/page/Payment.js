@@ -19,7 +19,7 @@ const Payment = () => {
   return (
     <div>
       <div className="event-body">
-        <div className="event-container">
+        <div className="event-payement">
           <h2>Payment Page</h2>
           <p>Il ne vous reste plus qu'un étape pour vous offrir</p>
           <p className="bold"> {eventName}</p>

@@ -64,28 +64,28 @@ const Header = () => {
               Ticket Search
             </NavLink>
             <NavLink
-              to="/modifyEvent"
+              to="/modifyEvent/:id"
               activeClassName="active"
               className="bm-menu-item"
               onClick={handleMenuClick}
             >
-              Modify Event
+              ModifyEvent/:id
             </NavLink>
             <NavLink
-              to="/deleteEvent"
+              to="/deleteEvent/:id"
               activeClassName="active"
               className="bm-menu-item"
               onClick={handleMenuClick}
             >
-              Delete Event
+              DeleteEvent/:id
             </NavLink>
             <NavLink
-              to="/deleteTicket"
+              to="/deleteTicket/:id"
               activeClassName="active"
               className="bm-menu-item"
               onClick={handleMenuClick}
             >
-              Delete Ticket
+              DeleteTicket/:id
             </NavLink>
             <NavLink
               to="/ticketsBook/1"
@@ -93,7 +93,7 @@ const Header = () => {
               className="bm-menu-item"
               onClick={handleMenuClick}
             >
-              Ticket Book/:id
+              TicketBook/:id
             </NavLink>
             <NavLink
               to="/eventToPublish"

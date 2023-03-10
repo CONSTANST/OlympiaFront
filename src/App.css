@@ -85,7 +85,18 @@ Event /// /*/
   padding: 30px;
   gap: 30px;
   border-radius: 10%;
-  background-color: black;
+  background-color: white;
+}
+.event-payement {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 500px;
+  margin: 10px auto;
+  padding: 30px;
+  gap: 30px;
+  border-radius: 10%;
+  background-color: white;
 }
 .event-container h1 {
   color: white;
@@ -99,6 +110,19 @@ Event /// /*/
 }
 .event-container p {
   color: darkred;
+  text-align: center;
+}
+.event-link {
+  display: block;
+  width: 100%;
+  margin: 5px auto;
+  max-width: 200px;
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  background-color: darkred;
 }
 .ticket-info {
   display: flex;

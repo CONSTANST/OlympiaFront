@@ -25,20 +25,22 @@ const Home = () => {
         .map((event) => (
           <div key={event._id} className="event-container">
             {localStorage.setItem("eventName", event.name)}
-            <h2 style={{color: "lightgray"}}>{event.name}</h2>
+            <h2>{event.name}</h2>
             <img src={event.event_image.url} alt={event.name} />
             <div>
-              <p style={{color: "lightgray"}}>
+              <p>
                 Place restante en categorie Orchestre {event.seats[0].orchestre}
               </p>
-              <p style={{color: "lightgray"}}>
+              <p>
                 Place restante en categorie Mezzanine {event.seats[0].mezzanine}
               </p>
-              <p style={{color: "lightgray"}}>
-                {new Date(event.date).toLocaleDateString()}
-              </p>
-              <Link to={`/ticketsBook/${event._id}`}>Réserver</Link>
-              <Link to={`/event/${event._id}`}>Plus de détails?</Link>
+              <p>{new Date(event.date).toLocaleDateString()}</p>
+              <Link to={`/ticketsBook/${event._id}`} className="event-link">
+                Réserver
+              </Link>
+              <Link to={`/event/${event._id}`} className="event-link">
+                Plus de détails?
+              </Link>
             </div>
           </div>
         ))}

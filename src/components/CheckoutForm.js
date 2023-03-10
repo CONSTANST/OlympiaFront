@@ -19,6 +19,7 @@ const CheckoutForm = ({productName, totalPrice, mail}) => {
         title: productName,
         token: stripeResponse.token.id,
       });
+      console.log(response);
       if (response.data) {
         setIsPaid(true);
       } else {
